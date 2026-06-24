@@ -9,15 +9,29 @@
 
 schema_version: "0.1.4"
 
-node_id: "b927a9dd-6132-4fc9-a51e-e3cee2568e3c"
-scope_id: "b44d4394-3147-5787-acab-51546be6a3da"
+node_id: "fcfd3757-1dff-4bf6-b024-10c5e281d87b"
+scope_id: "6658615b-0c7a-5d26-affb-856ea9f1c016"
 scope_key: "default"
 
 intent:
-  name: node-template
+  name: hoohoo
+  mission: "Define hoohoo's one-line mission here — refine in .cogni/repo-spec.yaml (surfaced at session start)."
 
 cogni_dao:
-  chain_id: "8453" # Base mainnet
+  dao_contract: "0x1e0bcf0aec618d3f19b8cf444c7fba2e096021cb"
+  plugin_contract: "0x13efb28b12cec4341d7ed303f7986bfac3eb6ab3"
+  signal_contract: "0x11a82bfd9f49de2f17dd0b68f41b9b065dbd7b3b"
+  chain_id: "8453"
+  base_url: "https://proposal.cognidao.org"
+
+knowledge:
+  database: "knowledge_hoohoo"
+  remote:
+    provider: dolthub
+    owner: "cogni-test-nodes"
+    repo: "knowledge-hoohoo"
+    url: "https://doltremoteapi.dolthub.com/cogni-test-nodes/knowledge-hoohoo"
+    custody: cogni-owned
 
 # Activity ledger ingestion + approver allowlist.
 # `approvers` gates the `(admin)/` route group and write routes under
@@ -30,7 +44,7 @@ activity_ledger:
   activity_sources:
     github:
       attribution_pipeline: cogni-v0.0
-      source_refs: ["Cogni-DAO/standalone-node"]
+      source_refs: ["cogni-test-org/hoohoo"]
 
 payments:
   status: pending_activation
